@@ -48,10 +48,8 @@ func providerConfigure(d *schema.ResourceData) (interface{}, error) {
 		OvcHostAddress: d.Get("ovc_host_address").(string),
 		CertPath:       d.Get("ovc_cert_path").(string),
 	}
-
 	if err := conf.createClient(); err != nil {
 		return nil, err
 	}
-
 	return &config, nil
 }
