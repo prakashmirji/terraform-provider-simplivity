@@ -7,6 +7,6 @@ import (
 
 func main() {
 	plugin.Serve(&plugin.ServeOpts{
-		ProviderFunc: simplivity.provider,
+		ProviderFunc: provider,
 	})
 }

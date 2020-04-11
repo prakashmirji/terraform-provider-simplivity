@@ -1,7 +1,6 @@
 package simplivity
 
 import (
-	"github.com/HewlettPackard/simplivity-go/ovc"
 	"github.com/hashicorp/terraform/helper/schema"
 )
 
