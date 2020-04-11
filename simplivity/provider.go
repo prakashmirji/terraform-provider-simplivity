@@ -45,8 +45,8 @@ func providerConfigure(d *schema.ResourceData) (interface{}, error) {
 	config := Config {
 		Username:		d.Get("ovc_username").(string),
 		Password:		d.Get("ovc_password").(string),
-		OvcHostAddress: d.Get("ovc_host_address").(string)
-		CertPath		d.Get("ovc_cert_path").(string)
+		OvcHostAddress: d.Get("ovc_host_address").(string),
+		CertPath		d.Get("ovc_cert_path").(string),
 	}
 
 	if err := conf.createClient(); err != nil {
