@@ -37,19 +37,23 @@ func Provider() terraform.ResourceProvider {
 		ResourcesMap: map[string]*schema.Resource{
 			"svt_backup": resourceBackup(),
 		},
+
 		ConfigureFunc: providerConfigure,
 	}
 }
 
 func providerConfigure(d *schema.ResourceData) (interface{}, error) {
+
 	config := Config{
 		Username:       d.Get("ovc_username").(string),
 		Password:       d.Get("ovc_password").(string),
 		OvcHostAddress: d.Get("ovc_host_address").(string),
 		CertPath:       d.Get("ovc_cert_path").(string),
 	}
-	if err := conf.createClient(); err != nil {
+
+	if err := config.createClient(); err != nil {
 		return nil, err
 	}
+
 	return &config, nil
 }
