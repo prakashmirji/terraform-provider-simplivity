@@ -31,11 +31,11 @@ func Provider() terraform.ResourceProvider {
 		},
 
 		DataSourcesMap: map[string]*schema.Resource{
-			"svt_backup": dataSourceBackup(),
+			"svt_backup_data": dataSourceBackup(),
 		},
 
 		ResourcesMap: map[string]*schema.Resource{
-			"svt_backup": resourceBackup(),
+			"svt_backup_resource": resourceBackup(),
 		},
 
 		ConfigureFunc: providerConfigure,

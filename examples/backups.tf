@@ -5,6 +5,6 @@ provider "simplivity" {
     ovc_cert_path = ""
 }
 
-data "svt_backup"  "backup" {
+data "svt_backup_data"  "backup" {
     name = "abc"
 }
