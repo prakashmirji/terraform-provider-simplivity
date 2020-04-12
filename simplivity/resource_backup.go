@@ -174,6 +174,7 @@ func resourceBackupCreate(d *schema.ResourceData, meta interface{}) error {
 func resourceBackupUpdate(d *schema.ResourceData, meta interface{}) error {
 	return nil
 }
+
 func resourceBackupDelete(d *schema.ResourceData, meta interface{}) error {
 	return nil
 }
