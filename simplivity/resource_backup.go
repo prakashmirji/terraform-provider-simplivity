@@ -6,7 +6,10 @@ import (
 
 func resourceBakcup() *schema.Resource {
 	return &schema.Resource{
-		Read: resourceBackupRead,
+		Read:   resourceBackupRead,
+		Create: resourceBackupCreate,
+		Update: resourceBackupUpdate,
+		Delete: resourceBackupDelete,
 
 		Schema: map[string]*schema.Schema{
 			"name": {
@@ -162,5 +165,16 @@ func resourceBackupRead(d *schema.ResourceData, meta interface{}) error {
 	d.Set("comp_clust_parent_name", backups.ComputeClusterParentName)
 	d.Set("hyp_type", backups.HypervisorType)
 	d.Set("sent_duration", backups.SentDuration)
+	return nil
+}
+
+func resourceBackupCreate(d *schema.ResourceData, meta interface{}) error {
+	return resourceBackupRead(d, meta)
+}
+
+func resourceBackupUpdate(d *schema.ResourceData, meta interface{}) error {
+	return nil
+}
+func resourceBackupDelete(d *schema.ResourceData, meta interface{}) error {
 	return nil
 }
