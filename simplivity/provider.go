@@ -1,7 +1,8 @@
 package simplivity
 
 import (
-	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	//"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/hashicorp/terraform/helper/schema"
 	"github.com/hashicorp/terraform/terraform"
 )
 
@@ -35,7 +36,7 @@ func Provider() terraform.ResourceProvider {
 		},
 
 		ResourcesMap: map[string]*schema.Resource{
-			"svt_backup_resource": resourceBackup(),
+			"svt_backup_resource": resourceBakcup(),
 		},
 
 		ConfigureFunc: providerConfigure,
