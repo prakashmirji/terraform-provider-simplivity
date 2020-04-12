@@ -138,7 +138,7 @@ func resourceBackupRead(d *schema.ResourceData, meta interface{}) error {
 		return nil
 	}
 	d.Set("name", backups.Name)
-	d.Set("id", backups.Id)
+	//d.Set("id", backups.Id)
 	d.Set("vm_name", backups.VirtualMachineName)
 	d.Set("created_at", (backups.CreatedAt).String())
 	d.Set("consistency_type", backups.ConsistencyType)
